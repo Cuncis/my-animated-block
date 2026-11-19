@@ -1,0 +1,11 @@
+/*
+ * Editor-only styles (block.json "editorStyle").
+ * Deliberately contains no @tailwind directives so utilities are not
+ * duplicated: they already ship in style-index.css, which loads in the editor too.
+ */
+.wp-block-my-animated-block-animated-block .wp-block-my-animated-block-animated-block__heading:focus,
+.wp-block-my-animated-block-animated-block .wp-block-my-animated-block-animated-block__body:focus {
+	outline: 1px dashed currentColor;
+	outline-offset: 4px;
+}
+

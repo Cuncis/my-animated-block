@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/animated-block",
+	"version": "1.0.0",
+	"title": "Animated Block",
+	"category": "design",
+	"icon": "superhero-alt",
+	"description": "A heading and text block with a GSAP entrance animation that plays when it scrolls into view.",
+	"keywords": [ "animation", "gsap", "hero", "motion" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-my-animated-block-animated-block__heading"
+		},
+		"body": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-my-animated-block-animated-block__body"
+		},
+		"preset": {
+			"type": "string",
+			"enum": [ "fade-up", "slide-in", "scale-in" ],
+			"default": "fade-up"
+		},
+		"duration": {
+			"type": "number",
+			"default": 0.8
+		},
+		"stagger": {
+			"type": "number",
+			"default": 0.12
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"example": {
+		"attributes": {
+			"heading": "Motion that respects your layout",
+			"body": "Each instance of this block animates independently.",
+			"preset": "fade-up",
+			"duration": 0.8,
+			"stagger": 0.12
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

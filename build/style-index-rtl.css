@@ -1,0 +1,203 @@
+/*
+ * Loaded on the frontend AND in the editor (block.json "style").
+ * Tailwind's base layer only emits --tw-* custom properties here because
+ * preflight is disabled in tailwind.config.js.
+ */
+*, ::before, ::after {
+	--tw-border-spacing-x: 0;
+	--tw-border-spacing-y: 0;
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	--tw-pan-x:  ;
+	--tw-pan-y:  ;
+	--tw-pinch-zoom:  ;
+	--tw-scroll-snap-strictness: proximity;
+	--tw-gradient-from-position:  ;
+	--tw-gradient-via-position:  ;
+	--tw-gradient-to-position:  ;
+	--tw-ordinal:  ;
+	--tw-slashed-zero:  ;
+	--tw-numeric-figure:  ;
+	--tw-numeric-spacing:  ;
+	--tw-numeric-fraction:  ;
+	--tw-ring-inset:  ;
+	--tw-ring-offset-width: 0px;
+	--tw-ring-offset-color: #fff;
+	--tw-ring-color: rgb(59 130 246 / 0.5);
+	--tw-ring-offset-shadow: 0 0 #0000;
+	--tw-ring-shadow: 0 0 #0000;
+	--tw-shadow: 0 0 #0000;
+	--tw-shadow-colored: 0 0 #0000;
+	--tw-blur:  ;
+	--tw-brightness:  ;
+	--tw-contrast:  ;
+	--tw-grayscale:  ;
+	--tw-hue-rotate:  ;
+	--tw-invert:  ;
+	--tw-saturate:  ;
+	--tw-sepia:  ;
+	--tw-drop-shadow:  ;
+	--tw-backdrop-blur:  ;
+	--tw-backdrop-brightness:  ;
+	--tw-backdrop-contrast:  ;
+	--tw-backdrop-grayscale:  ;
+	--tw-backdrop-hue-rotate:  ;
+	--tw-backdrop-invert:  ;
+	--tw-backdrop-opacity:  ;
+	--tw-backdrop-saturate:  ;
+	--tw-backdrop-sepia:  ;
+	--tw-contain-size:  ;
+	--tw-contain-layout:  ;
+	--tw-contain-paint:  ;
+	--tw-contain-style:  ;
+}
+::backdrop {
+	--tw-border-spacing-x: 0;
+	--tw-border-spacing-y: 0;
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	--tw-pan-x:  ;
+	--tw-pan-y:  ;
+	--tw-pinch-zoom:  ;
+	--tw-scroll-snap-strictness: proximity;
+	--tw-gradient-from-position:  ;
+	--tw-gradient-via-position:  ;
+	--tw-gradient-to-position:  ;
+	--tw-ordinal:  ;
+	--tw-slashed-zero:  ;
+	--tw-numeric-figure:  ;
+	--tw-numeric-spacing:  ;
+	--tw-numeric-fraction:  ;
+	--tw-ring-inset:  ;
+	--tw-ring-offset-width: 0px;
+	--tw-ring-offset-color: #fff;
+	--tw-ring-color: rgb(59 130 246 / 0.5);
+	--tw-ring-offset-shadow: 0 0 #0000;
+	--tw-ring-shadow: 0 0 #0000;
+	--tw-shadow: 0 0 #0000;
+	--tw-shadow-colored: 0 0 #0000;
+	--tw-blur:  ;
+	--tw-brightness:  ;
+	--tw-contrast:  ;
+	--tw-grayscale:  ;
+	--tw-hue-rotate:  ;
+	--tw-invert:  ;
+	--tw-saturate:  ;
+	--tw-sepia:  ;
+	--tw-drop-shadow:  ;
+	--tw-backdrop-blur:  ;
+	--tw-backdrop-brightness:  ;
+	--tw-backdrop-contrast:  ;
+	--tw-backdrop-grayscale:  ;
+	--tw-backdrop-hue-rotate:  ;
+	--tw-backdrop-invert:  ;
+	--tw-backdrop-opacity:  ;
+	--tw-backdrop-saturate:  ;
+	--tw-backdrop-sepia:  ;
+	--tw-contain-size:  ;
+	--tw-contain-layout:  ;
+	--tw-contain-paint:  ;
+	--tw-contain-style:  ;
+}
+.tw-relative {
+	position: relative;
+}
+.tw-m-0 {
+	margin: 0px;
+}
+.tw-mx-auto {
+	margin-right: auto;
+	margin-left: auto;
+}
+.tw-block {
+	display: block;
+}
+.tw-flex {
+	display: flex;
+}
+.tw-h-1 {
+	height: 0.25rem;
+}
+.tw-w-16 {
+	width: 4rem;
+}
+.tw-max-w-3xl {
+	max-width: 48rem;
+}
+.tw-flex-col {
+	flex-direction: column;
+}
+.tw-gap-4 {
+	gap: 1rem;
+}
+.tw-overflow-hidden {
+	overflow: hidden;
+}
+.tw-rounded-2xl {
+	border-radius: 1rem;
+}
+.tw-rounded-full {
+	border-radius: 9999px;
+}
+.tw-bg-current {
+	background-color: currentColor;
+}
+.tw-px-6 {
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+}
+.tw-py-12 {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.tw-text-3xl {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+}
+.tw-text-lg {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+.tw-font-bold {
+	font-weight: 700;
+}
+.tw-leading-relaxed {
+	line-height: 1.625;
+}
+.tw-leading-tight {
+	line-height: 1.25;
+}
+.tw-opacity-80 {
+	opacity: 0.8;
+}
+
+/* Hint the compositor only while a block is animating. */
+.wp-block-my-animated-block-animated-block [data-mab-animate] {
+	will-change: transform, opacity;
+}
+
+.wp-block-my-animated-block-animated-block[data-mab-ready="true"] [data-mab-animate] {
+	will-change: auto;
+}
+
+@media (min-width: 768px) {
+	.md\:tw-px-12 {
+		padding-right: 3rem;
+		padding-left: 3rem;
+	}
+	.md\:tw-text-5xl {
+		font-size: 3rem;
+		line-height: 1;
+	}
+}
+

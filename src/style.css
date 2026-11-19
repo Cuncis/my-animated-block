@@ -1,0 +1,17 @@
+/*
+ * Loaded on the frontend AND in the editor (block.json "style").
+ * Tailwind's base layer only emits --tw-* custom properties here because
+ * preflight is disabled in tailwind.config.js.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hint the compositor only while a block is animating. */
+.wp-block-my-animated-block-animated-block [data-mab-animate] {
+	will-change: transform, opacity;
+}
+
+.wp-block-my-animated-block-animated-block[data-mab-ready="true"] [data-mab-animate] {
+	will-change: auto;
+}
