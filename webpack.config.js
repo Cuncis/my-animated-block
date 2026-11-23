@@ -11,5 +11,13 @@ module.exports = {
 			__dirname,
 			'src/extensions/overlay/index.tsx'
 		),
+		'extensions/motion/index': path.resolve(
+			__dirname,
+			'src/extensions/motion/index.tsx'
+		),
+		'extensions/motion/view': path.resolve(
+			__dirname,
+			'src/extensions/motion/view.ts'
+		),
 	} ),
 };

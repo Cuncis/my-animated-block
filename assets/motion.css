@@ -1,0 +1,74 @@
+/* My Animated Block: motion (scroll reveal + hover). Variables come from Settings > Design. */
+.mab-hide {
+	opacity: 0;
+	transform: var( --mab-from, translate3d( 0, var( --mab-motion-distance, 40px ), 0 ) );
+	transition: opacity var( --mab-motion-duration, 0.9s ) cubic-bezier( 0.22, 1, 0.36, 1 ),
+		transform var( --mab-motion-duration, 0.9s ) cubic-bezier( 0.22, 1, 0.36, 1 );
+	transition-delay: var( --mab-delay, 0ms );
+	will-change: opacity, transform;
+}
+
+.mab-hide.mab-in {
+	opacity: 1;
+	transform: none;
+}
+
+.mab-fx--down { --mab-from: translate3d( 0, calc( var( --mab-motion-distance, 40px ) * -1 ), 0 ); }
+.mab-fx--left { --mab-from: translate3d( calc( var( --mab-motion-distance, 40px ) * -1.2 ), 0, 0 ); }
+.mab-fx--right { --mab-from: translate3d( calc( var( --mab-motion-distance, 40px ) * 1.2 ), 0, 0 ); }
+.mab-fx--zoom { --mab-from: scale( 0.92 ); }
+.mab-fx--fade { --mab-from: none; }
+
+@keyframes mab-intro {
+	from { opacity: 0; transform: var( --mab-from, translate3d( 0, 30px, 0 ) ); }
+	to { opacity: 1; transform: none; }
+}
+
+.mab-intro {
+	animation: mab-intro var( --mab-motion-duration, 0.9s ) cubic-bezier( 0.22, 1, 0.36, 1 ) both;
+	animation-delay: var( --mab-delay, 0ms );
+}
+
+/* Hover effects */
+.mab-hover {
+	transition: transform 0.5s cubic-bezier( 0.22, 1, 0.36, 1 ), box-shadow 0.5s ease;
+}
+
+.mab-hover--lift:hover,
+.mab-hover--lift-zoom:hover {
+	transform: translateY( -8px );
+	box-shadow: 0 18px 40px rgba( 0, 0, 0, 0.12 );
+}
+
+.mab-hover--glow:hover {
+	box-shadow: 0 0 0 4px color-mix( in srgb, var( --mab-accent, #7c3aed ) 28%, transparent );
+}
+
+.mab-hover--zoom,
+.mab-hover--lift-zoom {
+	overflow: hidden;
+}
+
+.mab-hover--zoom img,
+.mab-hover--lift-zoom img {
+	transition: transform 0.7s cubic-bezier( 0.22, 1, 0.36, 1 );
+}
+
+.mab-hover--zoom:hover img,
+.mab-hover--lift-zoom:hover img {
+	transform: scale( 1.07 );
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.mab-hide,
+	.mab-hide.mab-in {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.mab-intro { animation: none; }
+
+	.mab-hover,
+	.mab-hover img { transition: none; }
+}
