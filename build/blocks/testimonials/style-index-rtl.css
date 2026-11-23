@@ -42,6 +42,88 @@
 	}
 }
 
+/* Enhanced slider: hide the raw scrollbar, add arrows + dots. */
+.mab-testimonials--slider.has-js .mab-testimonials__track {
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	padding-bottom: 0;
+}
+
+.mab-testimonials--slider.has-js .mab-testimonials__track::-webkit-scrollbar {
+	display: none;
+}
+
+.mab-testimonials__nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.25rem;
+	margin-top: 1.75rem;
+}
+
+.mab-testimonials__nav[hidden] { display: none; }
+
+.mab-testimonials__arrow {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+	border: 1.5px solid currentColor;
+	border-radius: 50%;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mab-testimonials__arrow:hover:not( :disabled ) {
+	background: color-mix( in srgb, currentColor 16%, transparent );
+	transform: scale( 1.08 );
+}
+
+.mab-testimonials__arrow:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+.mab-testimonials__arrow:focus-visible,
+.mab-testimonials__dot:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 3px;
+}
+
+.mab-testimonials__dots {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.mab-testimonials__dot {
+	width: 0.6rem;
+	height: 0.6rem;
+	padding: 0;
+	border: 0;
+	border-radius: 999px;
+	background: currentColor;
+	opacity: 0.3;
+	cursor: pointer;
+	transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.mab-testimonials__dot.is-active {
+	width: 1.75rem;
+	opacity: 1;
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.mab-testimonials--slider.has-js .mab-testimonials__track { scroll-behavior: auto; }
+	.mab-testimonials__arrow,
+	.mab-testimonials__dot { transition: none; }
+}
+
 .mab-testimonial {
 	display: flex;
 	flex-direction: column;

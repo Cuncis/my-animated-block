@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       My Animated Block
  * Description:       A lightweight block library for building whole sites without a page builder: Hero, Section, Feature Grid, CTA Banner, Testimonials, FAQ, Pricing Table, Contact Form, Tabs, Stats, Logo Carousel, Team, Lightbox, Map, Site Header, Post Grid and a GSAP Animated Block.
- * Version:           1.3.0
+ * Version:           1.4.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * License:           GPL-2.0-or-later
