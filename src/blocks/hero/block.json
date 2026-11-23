@@ -1,0 +1,38 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/hero",
+	"version": "1.0.0",
+	"title": "Hero",
+	"category": "mab-site",
+	"icon": "cover-image",
+	"description": "A large intro banner with an image or video background, overlay and call-to-action buttons.",
+	"keywords": [ "hero", "banner", "header", "cover" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"mediaType": {
+			"type": "string",
+			"enum": [ "image", "video" ],
+			"default": "image"
+		},
+		"mediaUrl": { "type": "string", "default": "" },
+		"mediaId": { "type": "number" },
+		"mediaAlt": { "type": "string", "default": "" },
+		"overlay": { "type": "number", "default": 45 },
+		"minHeight": { "type": "number", "default": 560 },
+		"textAlign": {
+			"type": "string",
+			"enum": [ "left", "center" ],
+			"default": "center"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "full", "wide" ],
+		"color": { "background": true, "text": true, "gradients": true }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

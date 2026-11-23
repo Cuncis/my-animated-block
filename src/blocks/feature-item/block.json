@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/feature-item",
+	"version": "1.0.0",
+	"title": "Feature",
+	"category": "mab-site",
+	"icon": "star-filled",
+	"description": "A single feature card for the Feature Grid.",
+	"parent": [ "my-animated-block/feature-grid" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"icon": { "type": "string", "default": "★" },
+		"iconUrl": { "type": "string", "default": "" },
+		"iconId": { "type": "number" },
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".mab-feature__title"
+		},
+		"text": {
+			"type": "string",
+			"source": "html",
+			"selector": ".mab-feature__text"
+		}
+	},
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"editorScript": "file:./index.js"
+}

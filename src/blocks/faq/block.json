@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/faq",
+	"version": "1.0.0",
+	"title": "FAQ",
+	"category": "mab-site",
+	"icon": "editor-help",
+	"description": "Collapsible questions and answers. Outputs FAQ structured data for search engines.",
+	"keywords": [ "faq", "accordion", "questions", "help" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"schema": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide" ],
+		"color": { "background": true, "text": true },
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/faq-item",
+  "version": "1.0.0",
+  "title": "FAQ Item",
+  "category": "mab-site",
+  "icon": "editor-help",
+  "description": "One question and its answer.",
+  "parent": [
+    "my-animated-block/faq"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "question": {
+      "type": "string",
+      "default": ""
+    },
+    "answer": {
+      "type": "string",
+      "default": ""
+    },
+    "open": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "editorScript": "file:./index.js"
+}

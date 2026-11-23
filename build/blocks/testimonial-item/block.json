@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/testimonial-item",
+  "version": "1.0.0",
+  "title": "Testimonial",
+  "category": "mab-site",
+  "icon": "format-quote",
+  "description": "A single customer quote.",
+  "parent": [
+    "my-animated-block/testimonials"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "quote": {
+      "type": "string",
+      "source": "html",
+      "selector": ".mab-testimonial__quote"
+    },
+    "name": {
+      "type": "string",
+      "source": "html",
+      "selector": ".mab-testimonial__name"
+    },
+    "role": {
+      "type": "string",
+      "source": "html",
+      "selector": ".mab-testimonial__role"
+    },
+    "avatarUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "avatarId": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number",
+      "default": 5
+    }
+  },
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "editorScript": "file:./index.js"
+}

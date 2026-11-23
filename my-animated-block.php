@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       My Animated Block
- * Description:       A Gutenberg block with GSAP-powered entrance animations, built with React, TypeScript and Tailwind CSS.
- * Version:           1.0.0
+ * Description:       A lightweight block library for building whole sites without a page builder: Hero, Section, Feature Grid, CTA Banner, Testimonials, FAQ, Pricing Table, Contact Form and a GSAP Animated Block.
+ * Version:           1.1.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * License:           GPL-2.0-or-later
@@ -22,24 +22,49 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 const BUILD_DIR = __DIR__ . '/build';
 
+require_once __DIR__ . '/includes/contact-form.php';
+
 /**
- * Registers the block from the compiled build/block.json.
+ * Registers every block found in build/blocks/<name>/block.json.
  *
- * Every asset (editorScript, editorStyle, style, viewScript) is declared in
- * block.json, so WordPress registers the handles, reads the generated
- * *.asset.php dependency/version files, wires up script translations and
- * enqueues the frontend assets only on pages that actually contain the block.
- * No manual wp_enqueue_* calls are needed (or wanted) here.
+ * Each block declares its own assets (editorScript, editorStyle, style,
+ * viewScript, render) in block.json, so WordPress registers the handles,
+ * reads the generated *.asset.php files, and enqueues a block's frontend
+ * assets only on pages that actually contain that block. No manual
+ * wp_enqueue_* calls are needed (or wanted) here.
  */
-function register_block(): void {
-	if ( ! file_exists( BUILD_DIR . '/block.json' ) ) {
+function register_blocks(): void {
+	$manifests = glob( BUILD_DIR . '/blocks/*/block.json' );
+
+	if ( empty( $manifests ) ) {
 		add_action( 'admin_notices', __NAMESPACE__ . '\\render_missing_build_notice' );
 		return;
 	}
 
-	register_block_type( BUILD_DIR );
+	foreach ( $manifests as $manifest ) {
+		register_block_type( dirname( $manifest ) );
+	}
 }
-add_action( 'init', __NAMESPACE__ . '\\register_block' );
+add_action( 'init', __NAMESPACE__ . '\\register_blocks' );
+
+/**
+ * Adds a "Site Blocks" category to the block inserter.
+ *
+ * @param array<int, array<string, string>> $categories Existing categories.
+ * @return array<int, array<string, string>>
+ */
+function register_block_category( array $categories ): array {
+	array_unshift(
+		$categories,
+		array(
+			'slug'  => 'mab-site',
+			'title' => __( 'Site Blocks', 'my-animated-block' ),
+		)
+	);
+
+	return $categories;
+}
+add_filter( 'block_categories_all', __NAMESPACE__ . '\\register_block_category' );
 
 /**
  * Shows an admin notice when the plugin is active but has not been built yet.

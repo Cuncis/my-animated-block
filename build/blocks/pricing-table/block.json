@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/pricing-table",
+  "version": "1.0.0",
+  "title": "Pricing Table",
+  "category": "mab-site",
+  "icon": "money-alt",
+  "description": "Compare plans side by side, with an optional monthly / yearly billing toggle.",
+  "keywords": [
+    "pricing",
+    "plans",
+    "packages",
+    "subscription"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "showToggle": {
+      "type": "boolean",
+      "default": true
+    },
+    "monthlyLabel": {
+      "type": "string",
+      "default": "Monthly"
+    },
+    "yearlyLabel": {
+      "type": "string",
+      "default": "Yearly"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

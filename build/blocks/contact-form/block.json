@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/contact-form",
+  "version": "1.0.0",
+  "title": "Contact Form",
+  "category": "mab-site",
+  "icon": "email",
+  "description": "A lightweight contact form that emails you. Spam-protected with a honeypot, a timing check and rate limiting; no external service or JavaScript.",
+  "keywords": [
+    "contact",
+    "form",
+    "email",
+    "message"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "formId": {
+      "type": "string",
+      "default": ""
+    },
+    "recipient": {
+      "type": "string",
+      "default": ""
+    },
+    "subject": {
+      "type": "string",
+      "default": "New message from your website"
+    },
+    "showPhone": {
+      "type": "boolean",
+      "default": false
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Send message"
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "Thanks! Your message has been sent."
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide"
+    ],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

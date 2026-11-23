@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/pricing-plan",
+	"version": "1.0.0",
+	"title": "Pricing Plan",
+	"category": "mab-site",
+	"icon": "tag",
+	"description": "One plan in a Pricing Table.",
+	"parent": [ "my-animated-block/pricing-table" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"name": {
+			"type": "string",
+			"source": "html",
+			"selector": ".mab-plan__name"
+		},
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": ".mab-plan__description"
+		},
+		"currency": { "type": "string", "default": "$" },
+		"priceMonthly": { "type": "string", "default": "29" },
+		"priceYearly": { "type": "string", "default": "" },
+		"periodMonthly": { "type": "string", "default": "/month" },
+		"periodYearly": { "type": "string", "default": "/year" },
+		"highlighted": { "type": "boolean", "default": false },
+		"badge": { "type": "string", "default": "Most popular" }
+	},
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"editorScript": "file:./index.js"
+}

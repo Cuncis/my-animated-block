@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/section",
+  "version": "1.0.0",
+  "title": "Section",
+  "category": "mab-site",
+  "icon": "align-wide",
+  "description": "A full-width page section with a constrained content area and consistent vertical spacing.",
+  "keywords": [
+    "section",
+    "container",
+    "wrapper",
+    "layout"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "enum": [
+        "div",
+        "section",
+        "header",
+        "footer",
+        "main",
+        "aside"
+      ],
+      "default": "section"
+    },
+    "width": {
+      "type": "string",
+      "enum": [
+        "narrow",
+        "default",
+        "wide",
+        "full"
+      ],
+      "default": "default"
+    },
+    "spacing": {
+      "type": "string",
+      "enum": [
+        "none",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ],
+      "default": "lg"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "full"
+    ],
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": true
+    },
+    "spacing": {
+      "margin": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,50 @@
+.mab-cta {
+	padding: 3rem 1.5rem;
+	border-radius: 1rem;
+	background-color: #1f2937;
+	color: #fff;
+	box-sizing: border-box;
+}
+
+.mab-cta__inner {
+	display: flex;
+	flex-direction: column;
+	gap: var( --wp--style--block-gap, 1rem );
+	max-width: 1140px;
+	margin-inline: auto;
+}
+
+.mab-cta__inner > * {
+	margin-block: 0;
+}
+
+.mab-cta--center .mab-cta__inner {
+	align-items: center;
+	max-width: 720px;
+	text-align: center;
+}
+
+.mab-cta--center .wp-block-buttons {
+	justify-content: center;
+}
+
+@media ( min-width: 782px ) {
+	.mab-cta--split .mab-cta__inner {
+		display: grid;
+		grid-template-columns: minmax( 0, 1fr ) auto;
+		-moz-column-gap: 3rem;
+		     column-gap: 3rem;
+		row-gap: 0.75rem;
+		align-items: center;
+	}
+
+	.mab-cta--split .mab-cta__inner > * {
+		grid-column: 1;
+	}
+
+	.mab-cta--split .mab-cta__inner > .wp-block-buttons {
+		grid-column: 2;
+		grid-row: 1 / span 4;
+	}
+}
+

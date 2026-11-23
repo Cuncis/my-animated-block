@@ -1,0 +1,4 @@
+.mab-section > .mab-section__inner:empty {
+	min-height: 4rem;
+}
+

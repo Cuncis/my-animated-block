@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/cta-banner",
+  "version": "1.0.0",
+  "title": "CTA Banner",
+  "category": "mab-site",
+  "icon": "megaphone",
+  "description": "A highlighted call-to-action band with a heading, text and buttons.",
+  "keywords": [
+    "cta",
+    "call to action",
+    "banner",
+    "promo"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "enum": [
+        "center",
+        "split"
+      ],
+      "default": "center"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "__experimentalBorder": {
+      "radius": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
