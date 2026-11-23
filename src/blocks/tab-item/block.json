@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/tab-item",
+	"version": "1.0.0",
+	"title": "Tab",
+	"category": "mab-site",
+	"icon": "index-card",
+	"description": "One tab: a title and its content.",
+	"parent": [ "my-animated-block/tabs" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".mab-tab__title"
+		}
+	},
+	"supports": { "html": false, "reusable": false },
+	"editorScript": "file:./index.js"
+}

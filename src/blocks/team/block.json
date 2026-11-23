@@ -1,0 +1,29 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/team",
+	"version": "1.0.0",
+	"title": "Team",
+	"category": "mab-site",
+	"icon": "groups",
+	"description": "A grid of team members with photo, name, role, short bio and a link.",
+	"keywords": [ "team", "staff", "people", "about" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"columns": { "type": "number", "default": 3 }
+	},
+	"styles": [
+		{ "name": "card", "label": "Card", "isDefault": true },
+		{ "name": "plain", "label": "Plain" }
+	],
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"color": { "background": true, "text": true },
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

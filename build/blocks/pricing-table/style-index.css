@@ -208,3 +208,5 @@
 	margin-top: 0.4rem;
 }
 
+.mab-plan__description:empty { display: none; }
+

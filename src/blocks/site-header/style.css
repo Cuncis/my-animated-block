@@ -1,0 +1,304 @@
+.mab-header {
+	z-index: 50;
+	background: #fff;
+	color: #333;
+	border-bottom: 1px solid rgba( 0, 0, 0, 0.08 );
+	transition: box-shadow 0.2s ease;
+}
+
+.mab-header.is-sticky {
+	position: sticky;
+	top: 0;
+}
+
+.admin-bar .mab-header.is-sticky {
+	top: 32px;
+}
+
+@media ( max-width: 782px ) {
+	.admin-bar .mab-header.is-sticky {
+		top: 46px;
+	}
+}
+
+.mab-header.is-scrolled {
+	box-shadow: 0 2px 14px rgba( 0, 0, 0, 0.1 );
+}
+
+.mab-header__bar {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	max-width: 1140px;
+	margin-inline: auto;
+	padding: 0.75rem 1.25rem;
+}
+
+.mab-header__brand {
+	flex: none;
+}
+
+.mab-header__brand img {
+	display: block;
+	width: var( --mab-logo-w, 140px );
+	height: auto;
+}
+
+.mab-header .mab-header__title {
+	color: inherit;
+	font-size: 1.35rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.mab-header__nav {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+/* ---- Menu (desktop) ---- */
+.mab-header__menu,
+.mab-header__menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.mab-header__menu {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.mab-header__menu li {
+	position: relative;
+	margin: 0;
+}
+
+.mab-header .mab-header__menu a {
+	display: block;
+	padding: 0.6rem 0.8rem;
+	color: inherit;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.mab-header .mab-header__menu a:hover,
+.mab-header .mab-header__menu a:focus-visible,
+.mab-header .mab-header__menu .current-menu-item > a {
+	color: var( --mab-accent, #c36 );
+}
+
+.mab-header__menu .menu-item-has-children > a::after {
+	content: '';
+	display: inline-block;
+	margin-left: 0.4rem;
+	border: solid currentColor;
+	border-width: 0 1.5px 1.5px 0;
+	padding: 2.5px;
+	vertical-align: 0.15em;
+	transform: rotate( 45deg );
+}
+
+/* Dropdown */
+.mab-header__menu .sub-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 10;
+	min-width: 14rem;
+	padding: 0.5rem;
+	border: 1px solid rgba( 0, 0, 0, 0.08 );
+	border-radius: 0.5rem;
+	background: #fff;
+	box-shadow: 0 12px 30px rgba( 0, 0, 0, 0.12 );
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY( 6px );
+	transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+.mab-header__menu li:hover > .sub-menu,
+.mab-header__menu li:focus-within > .sub-menu {
+	visibility: visible;
+	opacity: 1;
+	transform: none;
+}
+
+.mab-header__menu .sub-menu .sub-menu {
+	top: 0;
+	left: 100%;
+}
+
+/* Mega menu: add the CSS class "mab-mega" to a top-level menu item. */
+.mab-header__menu > li.mab-mega {
+	position: static;
+}
+
+.mab-header__menu > li.mab-mega > .sub-menu {
+	left: 0;
+	right: 0;
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax( 190px, 1fr ) );
+	gap: 0.5rem 1.5rem;
+	max-width: 1140px;
+	margin-inline: auto;
+	padding: 1.5rem;
+}
+
+.mab-header__menu > li.mab-mega > .sub-menu > li > a {
+	font-weight: 700;
+}
+
+.mab-header__menu > li.mab-mega > .sub-menu .sub-menu {
+	position: static;
+	min-width: 0;
+	padding: 0 0 0 0.25rem;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	visibility: visible;
+	opacity: 1;
+	transform: none;
+}
+
+.mab-header__menu > li.mab-mega > .sub-menu .sub-menu a {
+	font-weight: 400;
+	opacity: 0.85;
+}
+
+/* CTA */
+.mab-header .mab-header__cta {
+	flex: none;
+	padding: 0.5rem 1.25rem;
+	border: 1px solid var( --mab-accent, #c36 );
+	border-radius: 3px;
+	background: var( --mab-accent, #c36 );
+	color: #fff;
+	font-weight: 500;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: opacity 0.2s ease;
+}
+
+.mab-header .mab-header__cta:hover,
+.mab-header .mab-header__cta:focus {
+	color: #fff;
+	opacity: 0.88;
+}
+
+/* Burger (hidden on desktop) */
+.mab-header .mab-header__toggle {
+	display: none;
+	padding: 0.6rem;
+	border: 1px solid rgba( 0, 0, 0, 0.2 );
+	border-radius: 3px;
+	background: transparent;
+	color: inherit;
+	line-height: 0;
+	cursor: pointer;
+}
+
+.mab-header .mab-header__toggle:hover,
+.mab-header .mab-header__toggle:focus {
+	background: rgba( 0, 0, 0, 0.05 );
+	color: inherit;
+}
+
+.mab-header__burger,
+.mab-header__burger::before,
+.mab-header__burger::after {
+	display: block;
+	width: 1.4rem;
+	height: 2px;
+	background: currentColor;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mab-header__burger {
+	position: relative;
+}
+
+.mab-header__burger::before,
+.mab-header__burger::after {
+	content: '';
+	position: absolute;
+	left: 0;
+}
+
+.mab-header__burger::before { top: -6px; }
+.mab-header__burger::after { top: 6px; }
+
+.mab-header.is-open .mab-header__burger { background: transparent; }
+.mab-header.is-open .mab-header__burger::before { top: 0; transform: rotate( 45deg ); }
+.mab-header.is-open .mab-header__burger::after { top: 0; transform: rotate( -45deg ); }
+
+/* ---- Mobile ---- */
+@media ( max-width: 900px ) {
+	.mab-header .mab-header__toggle {
+		display: inline-block;
+	}
+
+	.mab-header__nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		display: none;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.5rem;
+		max-height: calc( 100vh - 5rem );
+		padding: 0.75rem 1.25rem 1.25rem;
+		overflow-y: auto;
+		border-bottom: 1px solid rgba( 0, 0, 0, 0.08 );
+		background: inherit;
+		box-shadow: 0 12px 24px rgba( 0, 0, 0, 0.1 );
+	}
+
+	.mab-header.is-open .mab-header__nav {
+		display: flex;
+	}
+
+	.mab-header__menu {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+	}
+
+	/* Sub-menus are always expanded on mobile. */
+	.mab-header__menu .sub-menu,
+	.mab-header__menu > li.mab-mega > .sub-menu {
+		position: static;
+		display: block;
+		min-width: 0;
+		padding: 0 0 0 1rem;
+		border: 0;
+		background: transparent;
+		box-shadow: none;
+		visibility: visible;
+		opacity: 1;
+		transform: none;
+	}
+
+	.mab-header__menu .menu-item-has-children > a::after {
+		display: none;
+	}
+
+	.mab-header .mab-header__cta {
+		text-align: center;
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.mab-header,
+	.mab-header__menu .sub-menu,
+	.mab-header__burger,
+	.mab-header__burger::before,
+	.mab-header__burger::after {
+		transition: none;
+	}
+}

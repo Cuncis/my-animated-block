@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/site-header",
+	"version": "1.0.0",
+	"title": "Site Header",
+	"category": "mab-site",
+	"icon": "menu",
+	"description": "Logo, navigation with mega-menu support, a call-to-action button and a mobile menu. Can stick to the top while scrolling.",
+	"keywords": [ "header", "navigation", "menu", "mega menu", "sticky" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"menuId": { "type": "number", "default": 0 },
+		"sticky": { "type": "boolean", "default": true },
+		"ctaText": { "type": "string", "default": "" },
+		"ctaUrl": { "type": "string", "default": "" },
+		"logoWidth": { "type": "number", "default": 140 }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "full" ],
+		"color": { "background": true, "text": true },
+		"spacing": { "margin": true }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}

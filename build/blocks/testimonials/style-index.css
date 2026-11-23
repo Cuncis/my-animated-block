@@ -97,3 +97,6 @@
 	opacity: 0.7;
 }
 
+.mab-testimonial__role:empty,
+.mab-testimonial__name:empty { display: none; }
+

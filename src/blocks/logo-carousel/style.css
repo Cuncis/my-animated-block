@@ -1,0 +1,79 @@
+.mab-logos {
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient( to right, transparent, #000 8%, #000 92%, transparent );
+	mask-image: linear-gradient( to right, transparent, #000 8%, #000 92%, transparent );
+}
+
+.mab-logos__track {
+	display: flex;
+	width: max-content;
+	animation: mab-logos-scroll var( --mab-logos-speed, 30s ) linear infinite;
+}
+
+.mab-logos:hover .mab-logos__track {
+	animation-play-state: paused;
+}
+
+.mab-logos__list {
+	display: flex;
+	flex: none;
+	align-items: center;
+	gap: 4rem;
+	margin: 0;
+	padding: 0 2rem;
+	list-style: none;
+}
+
+.mab-logos__item {
+	flex: none;
+	margin: 0;
+	list-style: none;
+}
+
+.mab-logos__item img {
+	display: block;
+	width: auto;
+	max-width: none;
+	height: var( --mab-logo-h, 48px );
+	object-fit: contain;
+	transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.mab-logos.is-grayscale .mab-logos__item img {
+	filter: grayscale( 1 );
+	opacity: 0.65;
+}
+
+.mab-logos.is-grayscale .mab-logos__item img:hover {
+	filter: none;
+	opacity: 1;
+}
+
+@keyframes mab-logos-scroll {
+	to {
+		transform: translateX( -50% );
+	}
+}
+
+/* Reduced motion: a static, wrapped row of logos. */
+@media ( prefers-reduced-motion: reduce ) {
+	.mab-logos {
+		-webkit-mask-image: none;
+		mask-image: none;
+	}
+
+	.mab-logos__track {
+		width: auto;
+		animation: none;
+	}
+
+	.mab-logos__list {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem 3rem;
+	}
+
+	.mab-logos__list--copy {
+		display: none;
+	}
+}

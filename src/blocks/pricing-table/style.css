@@ -207,3 +207,5 @@
 .mab-plan__body li + li {
 	margin-top: 0.4rem;
 }
+
+.mab-plan__description:empty { display: none; }

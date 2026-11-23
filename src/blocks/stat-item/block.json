@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/stat-item",
+	"version": "1.0.0",
+	"title": "Stat",
+	"category": "mab-site",
+	"icon": "chart-bar",
+	"description": "A single number with a label.",
+	"parent": [ "my-animated-block/stats" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"value": { "type": "number", "default": 100 },
+		"decimals": { "type": "number", "default": 0 },
+		"prefix": { "type": "string", "default": "" },
+		"suffix": { "type": "string", "default": "+" },
+		"label": {
+			"type": "string",
+			"source": "html",
+			"selector": ".mab-stat__label"
+		}
+	},
+	"supports": { "html": false, "reusable": false },
+	"editorScript": "file:./index.js"
+}

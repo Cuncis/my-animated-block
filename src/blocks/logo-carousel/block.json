@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/logo-carousel",
+	"version": "1.0.0",
+	"title": "Logo Carousel",
+	"category": "mab-site",
+	"icon": "images-alt2",
+	"description": "A row of client or partner logos that scrolls endlessly. Pure CSS, no JavaScript.",
+	"keywords": [ "logos", "clients", "partners", "brands", "marquee" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"images": {
+			"type": "array",
+			"default": [],
+			"items": { "type": "object" }
+		},
+		"speed": { "type": "number", "default": 30 },
+		"logoHeight": { "type": "number", "default": 48 },
+		"grayscale": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"color": { "background": true },
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/map-embed",
+  "version": "1.0.0",
+  "title": "Map",
+  "category": "mab-site",
+  "icon": "location-alt",
+  "description": "A Google Map that loads only after the visitor clicks, so the page stays fast and nothing is sent to Google until they choose to.",
+  "keywords": [
+    "map",
+    "google maps",
+    "location",
+    "address"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "query": {
+      "type": "string",
+      "default": ""
+    },
+    "height": {
+      "type": "number",
+      "default": 400
+    },
+    "title": {
+      "type": "string",
+      "default": "Map"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Load map"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

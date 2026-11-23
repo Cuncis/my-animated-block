@@ -1,0 +1,9 @@
+/* In the editor the header is a preview: keep it in the flow and clickable-free. */
+.mab-header.is-sticky {
+	position: relative;
+	top: auto;
+}
+
+.wp-block-my-animated-block-site-header {
+	pointer-events: none;
+}

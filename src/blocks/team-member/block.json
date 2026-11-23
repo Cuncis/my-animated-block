@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/team-member",
+	"version": "1.0.0",
+	"title": "Team Member",
+	"category": "mab-site",
+	"icon": "admin-users",
+	"description": "One person in the Team block.",
+	"parent": [ "my-animated-block/team" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"photoUrl": { "type": "string", "default": "" },
+		"photoId": { "type": "number" },
+		"name": { "type": "string", "source": "html", "selector": ".mab-member__name" },
+		"role": { "type": "string", "source": "html", "selector": ".mab-member__role" },
+		"bio": { "type": "string", "source": "html", "selector": ".mab-member__bio" },
+		"linkUrl": { "type": "string", "default": "" },
+		"linkLabel": { "type": "string", "default": "LinkedIn" }
+	},
+	"supports": { "html": false, "reusable": false },
+	"editorScript": "file:./index.js"
+}

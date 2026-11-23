@@ -1,0 +1,172 @@
+.mab-media {
+	margin: 0;
+}
+
+/* Hello Elementor styles every <button>; neutralise it for the thumbnail. */
+.mab-media .mab-media__trigger {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	border-radius: 0.75rem;
+	background: rgba( 0, 0, 0, 0.08 );
+	color: inherit;
+	overflow: hidden;
+	cursor: zoom-in;
+	line-height: 0;
+	white-space: normal;
+	aspect-ratio: var( --mab-media-ratio, auto );
+}
+
+.mab-media--video .mab-media__trigger {
+	cursor: pointer;
+}
+
+.mab-media .mab-media__trigger:hover,
+.mab-media .mab-media__trigger:focus {
+	background: rgba( 0, 0, 0, 0.08 );
+	color: inherit;
+}
+
+.mab-media .mab-media__trigger:focus-visible {
+	outline: 3px solid var( --mab-accent, #c36 );
+	outline-offset: 2px;
+}
+
+.mab-media__trigger img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	transition: transform 0.4s ease;
+}
+
+.mab-media__trigger:hover img {
+	transform: scale( 1.03 );
+}
+
+.mab-media__blank {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 10rem;
+	height: 100%;
+	line-height: 1.4;
+}
+
+.mab-media__play {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	width: 4.5rem;
+	height: 4.5rem;
+	border-radius: 50%;
+	background: rgba( 0, 0, 0, 0.65 );
+	transform: translate( 50%, -50% );
+	transition: background-color 0.2s ease;
+}
+
+.mab-media__play::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 54%;
+	border-style: solid;
+	border-width: 0.8rem 1.3rem 0.8rem 0;
+	border-color: transparent #fff transparent transparent;
+	transform: translate( 50%, -50% );
+}
+
+.mab-media__trigger:hover .mab-media__play {
+	background: var( --mab-accent, #c36 );
+}
+
+.mab-media .mab-media__caption {
+	margin: 0.6rem 0 0;
+	color: inherit;
+	font-size: 0.9rem;
+	font-style: normal;
+	line-height: 1.4;
+	opacity: 0.75;
+}
+
+/* Popup (created by view.js) */
+.mab-lightbox {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	max-height: none;
+	margin: 0;
+	padding: 3rem 1rem 1rem;
+	border: 0;
+	background: transparent;
+	color: #fff;
+	overflow: hidden;
+}
+
+.mab-lightbox::backdrop {
+	background: rgba( 0, 0, 0, 0.88 );
+}
+
+.mab-lightbox[open] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mab-lightbox__body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 1100px;
+	max-height: 100%;
+}
+
+.mab-lightbox__image {
+	display: block;
+	max-width: 100%;
+	max-height: calc( 100vh - 5rem );
+	-o-object-fit: contain;
+	   object-fit: contain;
+	border-radius: 0.5rem;
+}
+
+.mab-lightbox__frame {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	max-height: calc( 100vh - 5rem );
+	border: 0;
+	border-radius: 0.5rem;
+	background: #000;
+}
+
+.mab-lightbox .mab-lightbox__close {
+	position: absolute;
+	top: 0.5rem;
+	left: 1rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: rgba( 255, 255, 255, 0.15 );
+	color: #fff;
+	font-size: 1.75rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.mab-lightbox .mab-lightbox__close:hover,
+.mab-lightbox .mab-lightbox__close:focus {
+	background: rgba( 255, 255, 255, 0.3 );
+	color: #fff;
+}
+
+/* Empty optional fields save an empty tag; do not leave a gap. */
+.mab-media .mab-media__caption:empty { display: none; }
+

@@ -1,0 +1,43 @@
+.mab-stats {
+	display: grid;
+	gap: var( --wp--style--block-gap, 2rem );
+	grid-template-columns: repeat( var( --mab-cols, 4 ), minmax( 0, 1fr ) );
+	text-align: center;
+}
+
+.mab-stats--cols-1 { --mab-cols: 1; }
+.mab-stats--cols-2 { --mab-cols: 2; }
+.mab-stats--cols-3 { --mab-cols: 3; }
+.mab-stats--cols-4 { --mab-cols: 4; }
+
+@media ( max-width: 1023px ) {
+	.mab-stats--cols-3,
+	.mab-stats--cols-4 { --mab-cols: 2; }
+}
+
+@media ( max-width: 479px ) {
+	.mab-stats { --mab-cols: 1; }
+}
+
+.mab-stat__value {
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap: 0.1em;
+	font-size: clamp( 2.25rem, 5vw, 3.5rem );
+	font-weight: 800;
+	line-height: 1.1;
+	font-variant-numeric: tabular-nums;
+}
+
+.mab-stat__prefix,
+.mab-stat__suffix {
+	color: var( --mab-accent, #c36 );
+}
+
+.mab-stat__label {
+	margin: 0.4rem 0 0;
+	opacity: 0.8;
+}
+
+.mab-stat__label:empty { display: none; }

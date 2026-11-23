@@ -39,3 +39,6 @@ if ( document.readyState === 'loading' ) {
 } else {
 	boot();
 }
+
+// Marks this file as a module so its helpers stay out of the global scope.
+export {};

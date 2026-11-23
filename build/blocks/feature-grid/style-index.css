@@ -67,3 +67,6 @@
 	line-height: 1.6;
 }
 
+.mab-feature__title:empty,
+.mab-feature__text:empty { display: none; }
+

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/media-lightbox",
+  "version": "1.0.0",
+  "title": "Image / Video Lightbox",
+  "category": "mab-site",
+  "icon": "format-video",
+  "description": "A thumbnail that opens the full image, or a YouTube / Vimeo / MP4 video, in a popup. Videos load only after the visitor clicks.",
+  "keywords": [
+    "lightbox",
+    "image",
+    "video",
+    "popup",
+    "youtube",
+    "vimeo"
+  ],
+  "textdomain": "my-animated-block",
+  "attributes": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video"
+      ],
+      "default": "image"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "fullUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number"
+    },
+    "alt": {
+      "type": "string",
+      "default": ""
+    },
+    "videoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "ratio": {
+      "type": "string",
+      "enum": [
+        "16/9",
+        "4/3",
+        "1/1",
+        "auto"
+      ],
+      "default": "16/9"
+    },
+    "caption": {
+      "type": "string",
+      "source": "html",
+      "selector": ".mab-media__caption"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

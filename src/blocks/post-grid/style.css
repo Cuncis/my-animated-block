@@ -1,0 +1,127 @@
+.mab-posts__filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+/* Hello Elementor outlines every <button> in pink; restyle as pills. */
+.mab-posts .mab-posts__filter {
+	padding: 0.4rem 1rem;
+	border: 1px solid rgba( 0, 0, 0, 0.2 );
+	border-radius: 999px;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	font-size: 0.9rem;
+	cursor: pointer;
+	white-space: normal;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mab-posts .mab-posts__filter:hover,
+.mab-posts .mab-posts__filter:focus {
+	background: rgba( 0, 0, 0, 0.06 );
+	color: inherit;
+}
+
+.mab-posts .mab-posts__filter.is-active,
+.mab-posts .mab-posts__filter.is-active:hover,
+.mab-posts .mab-posts__filter.is-active:focus {
+	border-color: var( --mab-accent, #c36 );
+	background: var( --mab-accent, #c36 );
+	color: #fff;
+}
+
+.mab-posts__grid {
+	display: grid;
+	gap: var( --wp--style--block-gap, 1.5rem );
+	grid-template-columns: repeat( var( --mab-cols, 3 ), minmax( 0, 1fr ) );
+}
+
+.mab-posts--cols-1 { --mab-cols: 1; }
+.mab-posts--cols-2 { --mab-cols: 2; }
+.mab-posts--cols-3 { --mab-cols: 3; }
+.mab-posts--cols-4 { --mab-cols: 4; }
+
+@media ( max-width: 1023px ) {
+	.mab-posts--cols-3,
+	.mab-posts--cols-4 { --mab-cols: 2; }
+}
+
+@media ( max-width: 639px ) {
+	.mab-posts { --mab-cols: 1; }
+}
+
+.mab-post {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba( 0, 0, 0, 0.1 );
+	border-radius: 1rem;
+	background: rgba( 255, 255, 255, 0.6 );
+	overflow: hidden;
+}
+
+.mab-post[hidden] {
+	display: none;
+}
+
+.mab-post__image {
+	display: block;
+	aspect-ratio: 16 / 10;
+	background: rgba( 0, 0, 0, 0.06 );
+	overflow: hidden;
+}
+
+.mab-post__image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.4s ease;
+}
+
+.mab-post:hover .mab-post__image img {
+	transform: scale( 1.04 );
+}
+
+.mab-post__body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1.25rem;
+}
+
+.mab-post__date {
+	font-size: 0.8rem;
+	opacity: 0.65;
+}
+
+.mab-post__title {
+	margin: 0;
+	font-size: 1.2rem;
+	line-height: 1.35;
+}
+
+.mab-posts .mab-post__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.mab-posts .mab-post__title a:hover {
+	color: var( --mab-accent, #c36 );
+}
+
+.mab-post__excerpt {
+	margin: 0;
+	opacity: 0.8;
+	line-height: 1.6;
+}
+
+.mab-posts__empty {
+	margin: 0;
+	padding: 2rem;
+	text-align: center;
+	opacity: 0.7;
+}

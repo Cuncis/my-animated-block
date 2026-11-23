@@ -1,0 +1,86 @@
+.mab-tabs__nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid rgba( 0, 0, 0, 0.15 );
+}
+
+/* Hello Elementor styles every <button>; these selectors out-rank it. */
+.mab-tabs .mab-tabs__tab {
+	margin-bottom: -1px;
+	padding: 0.75rem 1.25rem;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	font-weight: 600;
+	opacity: 0.7;
+	cursor: pointer;
+	white-space: normal;
+	transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.mab-tabs .mab-tabs__tab:hover,
+.mab-tabs .mab-tabs__tab:focus {
+	background: transparent;
+	color: inherit;
+	opacity: 1;
+}
+
+.mab-tabs .mab-tabs__tab.is-active {
+	border-bottom-color: var( --mab-accent, #c36 );
+	opacity: 1;
+}
+
+.mab-tabs .mab-tabs__tab:focus-visible {
+	outline: 2px solid var( --mab-accent, #c36 );
+	outline-offset: -2px;
+}
+
+/* Pills style */
+.mab-tabs.is-style-pills .mab-tabs__nav {
+	gap: 0.5rem;
+	border-bottom: 0;
+}
+
+.mab-tabs.is-style-pills .mab-tabs__tab {
+	margin: 0;
+	border: 1px solid rgba( 0, 0, 0, 0.2 );
+	border-radius: 999px;
+}
+
+.mab-tabs.is-style-pills .mab-tabs__tab.is-active,
+.mab-tabs.is-style-pills .mab-tabs__tab.is-active:hover,
+.mab-tabs.is-style-pills .mab-tabs__tab.is-active:focus {
+	border-color: var( --mab-accent, #c36 );
+	background: var( --mab-accent, #c36 );
+	color: #fff;
+}
+
+/* Panels */
+.mab-tab[hidden] {
+	display: none;
+}
+
+.mab-tab__body {
+	display: flex;
+	flex-direction: column;
+	gap: var( --wp--style--block-gap, 1rem );
+}
+
+.mab-tab__body > * {
+	margin-block: 0;
+}
+
+/* Without JavaScript the panels are stacked, each with its own heading. */
+.mab-tabs:not( .has-js ) .mab-tab + .mab-tab {
+	margin-top: 2rem;
+}
+
+.mab-tabs.has-js .mab-tab__title {
+	display: none;
+}
+

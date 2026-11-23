@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/schemas/block.json",
+	"apiVersion": 3,
+	"name": "my-animated-block/stats",
+	"version": "1.0.0",
+	"title": "Stats Counter",
+	"category": "mab-site",
+	"icon": "chart-bar",
+	"description": "Key numbers that count up when they scroll into view.",
+	"keywords": [ "stats", "numbers", "counter", "metrics" ],
+	"textdomain": "my-animated-block",
+	"attributes": {
+		"columns": { "type": "number", "default": 4 }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"color": { "background": true, "text": true },
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

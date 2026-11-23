@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/schemas/block.json",
+  "apiVersion": 3,
+  "name": "my-animated-block/tabs",
+  "version": "1.0.0",
+  "title": "Tabs",
+  "category": "mab-site",
+  "icon": "index-card",
+  "description": "Switchable panels of content. Without JavaScript every panel is simply shown in order.",
+  "keywords": [
+    "tabs",
+    "panels",
+    "switch",
+    "toggle"
+  ],
+  "textdomain": "my-animated-block",
+  "styles": [
+    {
+      "name": "underline",
+      "label": "Underline",
+      "isDefault": true
+    },
+    {
+      "name": "pills",
+      "label": "Pills"
+    }
+  ],
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide"
+    ],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
