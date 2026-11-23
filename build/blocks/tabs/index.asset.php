@@ -4,5 +4,5 @@
 		'wp-block-editor',
 		'wp-blocks'
 	),
-	'version' => '8d81a9d5cca092597993'
+	'version' => '68b20bbe0a7dbe080860'
 );

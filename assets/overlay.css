@@ -1,0 +1,16 @@
+/* Overlay option for Group / Section blocks (colour + opacity). */
+.has-mab-overlay {
+	position: relative;
+	isolation: isolate;
+}
+
+.has-mab-overlay::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	border-radius: inherit;
+	background: var( --mab-overlay-color );
+	opacity: var( --mab-overlay-opacity, 0.5 );
+	pointer-events: none;
+}
