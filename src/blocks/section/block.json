@@ -10,6 +10,7 @@
 	"keywords": [ "section", "container", "wrapper", "layout" ],
 	"textdomain": "my-animated-block",
 	"attributes": {
+		"align": { "type": "string", "default": "full" },
 		"tag": {
 			"type": "string",
 			"enum": [ "div", "section", "header", "footer", "main", "aside" ],
@@ -29,7 +30,7 @@
 	"supports": {
 		"html": false,
 		"anchor": true,
-		"align": [ "full" ],
+		"align": [ "wide", "full" ],
 		"color": { "background": true, "text": true, "gradients": true },
 		"spacing": { "margin": true }
 	},

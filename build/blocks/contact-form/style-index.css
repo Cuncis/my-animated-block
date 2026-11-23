@@ -1,3 +1,50 @@
+/* Shared button rules - source: src/shared/buttons.css (inlined: wp-scripts would split an @import into the editor-only stylesheet). */
+/*
+ * Buttons inside this plugin's blocks follow Hello Elementor's look
+ * (accent colour, 3px radius) instead of the core dark pill, and are
+ * protected from the theme's generic <button> / link rules.
+ * Change the accent site-wide with:  :root { --mab-accent: #0a66c2; }
+ */
+:is( .mab-hero, .mab-cta, .mab-plan, .mab-form ) .wp-block-button__link,
+.mab-form .mab-form__submit {
+	display: inline-block;
+	padding: 0.5rem 1.25rem;
+	border: 1px solid var( --mab-accent, #c36 );
+	border-radius: 3px;
+	background: var( --mab-accent, #c36 );
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	white-space: normal;
+	transition: opacity 0.2s ease;
+}
+
+:is( .mab-hero, .mab-cta, .mab-plan, .mab-form ) .wp-block-button__link:hover,
+:is( .mab-hero, .mab-cta, .mab-plan, .mab-form ) .wp-block-button__link:focus,
+.mab-form .mab-form__submit:hover,
+.mab-form .mab-form__submit:focus {
+	background: var( --mab-accent, #c36 );
+	color: #fff;
+	opacity: 0.88;
+	text-decoration: none;
+}
+
+/* Outline style: accent on light blocks, current text colour on dark ones. */
+:is( .mab-plan, .mab-form ) .wp-block-button.is-style-outline > .wp-block-button__link.wp-element-button {
+	border: 1px solid var( --mab-accent, #c36 );
+	background: transparent;
+	color: var( --mab-accent, #c36 );
+}
+
+:is( .mab-hero, .mab-cta ) .wp-block-button.is-style-outline > .wp-block-button__link.wp-element-button {
+	border: 1px solid currentColor;
+	background: transparent;
+	color: inherit;
+}
+
 .mab-form {
 	max-width: 640px;
 }
@@ -18,25 +65,31 @@
 	font-weight: 600;
 }
 
-.mab-form__field input,
-.mab-form__field textarea {
+.mab-form .mab-form__field input,
+.mab-form .mab-form__field textarea {
 	width: 100%;
-	padding: 0.7rem 0.9rem;
-	border: 1px solid rgba( 0, 0, 0, 0.25 );
-	border-radius: 0.5rem;
+	padding: 0.6rem 0.9rem;
+	border: 1px solid #666;
+	border-radius: 3px;
 	background: #fff;
 	color: #111827;
 	font: inherit;
 	box-sizing: border-box;
 }
 
-.mab-form__field input:focus-visible,
-.mab-form__field textarea:focus-visible {
-	outline: 2px solid #2563eb;
-	outline-offset: 1px;
+.mab-form .mab-form__field input:focus,
+.mab-form .mab-form__field textarea:focus {
+	border-color: var( --mab-accent, #c36 );
+	outline: 2px solid var( --mab-accent, #c36 );
+	outline-offset: 0;
 }
 
-.mab-form__submit {
+.mab-form .mab-form__field label {
+	display: block;
+	line-height: 1.4;
+}
+
+.mab-form .mab-form__submit {
 	align-self: flex-start;
 	cursor: pointer;
 }

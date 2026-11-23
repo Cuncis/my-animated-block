@@ -15,6 +15,10 @@
   ],
   "textdomain": "my-animated-block",
   "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
     "mediaType": {
       "type": "string",
       "enum": [

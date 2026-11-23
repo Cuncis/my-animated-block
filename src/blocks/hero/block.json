@@ -10,6 +10,7 @@
 	"keywords": [ "hero", "banner", "header", "cover" ],
 	"textdomain": "my-animated-block",
 	"attributes": {
+		"align": { "type": "string", "default": "full" },
 		"mediaType": {
 			"type": "string",
 			"enum": [ "image", "video" ],

@@ -1,3 +1,50 @@
+/* Shared button rules - source: src/shared/buttons.css (inlined: wp-scripts would split an @import into the editor-only stylesheet). */
+/*
+ * Buttons inside this plugin's blocks follow Hello Elementor's look
+ * (accent colour, 3px radius) instead of the core dark pill, and are
+ * protected from the theme's generic <button> / link rules.
+ * Change the accent site-wide with:  :root { --mab-accent: #0a66c2; }
+ */
+:is( .mab-hero, .mab-cta, .mab-plan, .mab-form ) .wp-block-button__link,
+.mab-form .mab-form__submit {
+	display: inline-block;
+	padding: 0.5rem 1.25rem;
+	border: 1px solid var( --mab-accent, #c36 );
+	border-radius: 3px;
+	background: var( --mab-accent, #c36 );
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	white-space: normal;
+	transition: opacity 0.2s ease;
+}
+
+:is( .mab-hero, .mab-cta, .mab-plan, .mab-form ) .wp-block-button__link:hover,
+:is( .mab-hero, .mab-cta, .mab-plan, .mab-form ) .wp-block-button__link:focus,
+.mab-form .mab-form__submit:hover,
+.mab-form .mab-form__submit:focus {
+	background: var( --mab-accent, #c36 );
+	color: #fff;
+	opacity: 0.88;
+	text-decoration: none;
+}
+
+/* Outline style: accent on light blocks, current text colour on dark ones. */
+:is( .mab-plan, .mab-form ) .wp-block-button.is-style-outline > .wp-block-button__link.wp-element-button {
+	border: 1px solid var( --mab-accent, #c36 );
+	background: transparent;
+	color: var( --mab-accent, #c36 );
+}
+
+:is( .mab-hero, .mab-cta ) .wp-block-button.is-style-outline > .wp-block-button__link.wp-element-button {
+	border: 1px solid currentColor;
+	background: transparent;
+	color: inherit;
+}
+
 .mab-pricing {
 	display: flex;
 	flex-direction: column;
@@ -18,7 +65,7 @@
 	display: inline-flex;
 }
 
-.mab-pricing__toggle-btn {
+.mab-pricing .mab-pricing__toggle-btn {
 	padding: 0.5rem 1.25rem;
 	border: 0;
 	border-radius: 999px;
@@ -27,14 +74,23 @@
 	font: inherit;
 	font-weight: 600;
 	cursor: pointer;
+	transition: background-color 0.2s ease;
 }
 
-.mab-pricing__toggle-btn.is-active {
-	background: #111827;
+.mab-pricing .mab-pricing__toggle-btn:hover,
+.mab-pricing .mab-pricing__toggle-btn:focus {
+	background: rgba( 0, 0, 0, 0.07 );
+	color: inherit;
+}
+
+.mab-pricing .mab-pricing__toggle-btn.is-active,
+.mab-pricing .mab-pricing__toggle-btn.is-active:hover,
+.mab-pricing .mab-pricing__toggle-btn.is-active:focus {
+	background: var( --mab-accent, #c36 );
 	color: #fff;
 }
 
-.mab-pricing__toggle-btn:focus-visible {
+.mab-pricing .mab-pricing__toggle-btn:focus-visible {
 	outline: 2px solid currentColor;
 	outline-offset: 2px;
 }
@@ -72,7 +128,7 @@
 }
 
 .mab-plan.is-highlighted {
-	border-color: currentColor;
+	border-color: var( --mab-accent, #c36 );
 	box-shadow: 0 12px 32px rgba( 0, 0, 0, 0.12 );
 }
 
@@ -82,7 +138,7 @@
 	right: 50%;
 	padding: 0.2rem 0.8rem;
 	border-radius: 999px;
-	background: #111827;
+	background: var( --mab-accent, #c36 );
 	color: #fff;
 	font-size: 0.75rem;
 	font-weight: 700;
