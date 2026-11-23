@@ -1,0 +1,17 @@
+/*
+ * Loaded only on pages that use the Full Width or Canvas template.
+ * Hello Elementor limits ".site-main" to 500 / 600 / 800 / 1140px with
+ * "body:not([class*=elementor-page-]) .site-main"; the extra element and
+ * class selectors here out-rank it.
+ */
+html body.mab-layout-full main.site-main.mab-layout,
+html body.mab-layout-canvas main.mab-layout {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding-inline: 0;
+}
+
+body.mab-layout-canvas {
+	margin: 0;
+}

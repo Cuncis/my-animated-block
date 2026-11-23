@@ -1,6 +1,6 @@
 {
 	"name": "my-animated-block",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "A lightweight block library for building whole sites without a page builder.",
 	"private": true,
 	"license": "GPL-2.0-or-later",
@@ -8,6 +8,8 @@
 	"files": [
 		"build",
 		"includes",
+		"templates",
+		"assets",
 		"my-animated-block.php"
 	],
 	"scripts": {
